@@ -1,0 +1,52 @@
+<!-- ESTask/templates/ESTask/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews</title>
+</head>
+<body>
+    <h1>Reviews</h1>
+
+    <form method="GET" action="{% url 'index' %}">
+        <label for="order_by_rating">Order by Rating:</label>
+        <select name="order_by_rating" id="order_by_rating">
+            <option value="highest_first">Highest First</option>
+            <option value="lowest_first">Lowest First</option>
+        </select>
+        <br>
+
+        <label for="minimum_rating">Minimum Rating:</label>
+        <select name="minimum_rating" id="minimum_rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+
+        <label for="order_by_date">Order by Date:</label>
+        <select name="order_by_date" id="order_by_date">
+            <option value="oldest_first">Oldest First</option>
+            <option value="newest_first">Newest First</option>
+        </select>
+        <br>
+
+        <label for="prioritize_text">Prioritize by Text:</label>
+        <select name="prioritize_text" id="prioritize_text">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Filter">
+    </form>
+
+    <h2>Filtered and Sorted Reviews</h2>
+    <ul>
+        {% for review in reviews %}
+        <li>{{ review.reviewText }} - Rating: {{ review.rating }} - Created On: {{ review.reviewCreatedOn }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
