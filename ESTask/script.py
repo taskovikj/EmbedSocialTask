@@ -1,6 +1,6 @@
 import json
 
-def read_json_data(file_path):
+def read_json(file_path):
     data_list = []
 
     with open(file_path) as json_file:

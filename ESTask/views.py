@@ -1,11 +1,11 @@
 import json
 from django.shortcuts import render
-from .script import read_json_data
+from .script import read_json
 
 def index(request):
     # Read the JSON data
 
-    reviews = read_json_data('ESTask/static/reviews.json')
+    reviews = read_json('ESTask/static/reviews.json')
 
     prioritize_text = request.GET.get('prioritize_text', 'no')
     order_by_rating = request.GET.get('order_by_rating', 'highest')
