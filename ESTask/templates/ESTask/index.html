@@ -8,14 +8,14 @@
     <h1>Reviews</h1>
 
     <form method="GET" action="{% url 'index' %}">
-        <label for="order_by_rating">Order by Rating:</label>
+        <label for="order_by_rating">Order by rating:</label>
         <select name="order_by_rating" id="order_by_rating">
             <option value="highest_first">Highest First</option>
             <option value="lowest_first">Lowest First</option>
         </select>
         <br>
 
-        <label for="minimum_rating">Minimum Rating:</label>
+        <label for="minimum_rating">Minimum rating:</label>
         <select name="minimum_rating" id="minimum_rating">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -25,14 +25,14 @@
         </select>
         <br>
 
-        <label for="order_by_date">Order by Date:</label>
+        <label for="order_by_date">Order by date:</label>
         <select name="order_by_date" id="order_by_date">
             <option value="oldest_first">Oldest First</option>
             <option value="newest_first">Newest First</option>
         </select>
         <br>
 
-        <label for="prioritize_text">Prioritize by Text:</label>
+        <label for="prioritize_text">Prioritize by text:</label>
         <select name="prioritize_text" id="prioritize_text">
             <option value="yes">Yes</option>
             <option value="no">No</option>
@@ -42,7 +42,7 @@
         <input type="submit" value="Filter">
     </form>
 
-    <h2>Filtered and Sorted Reviews</h2>
+    <h2>Result</h2>
     <ul>
         {% for review in reviews %}
         <li>{{ review.reviewText }} - Rating: {{ review.rating }} - Created On: {{ review.reviewCreatedOn }}</li>
