@@ -1,0 +1,4 @@
+This is my take on the task.
+It is done with Python using Django framework. Main logic is done in views.py where the 
+filtering is done and later displayed on index.html. Reading and parsing of the JSON file is performed in script.py. 
+Have a nice day :D
